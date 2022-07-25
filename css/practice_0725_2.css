@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+#wrap {
+    text-align: center;
+    background-color: #000;
+    position: relative;
+}
+#wrap .real:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#wrap .real {
+    margin: 0 auto;
+    width: 70%;
+}
+#wrap h1 {
+    float: left;
+    width: 20%;
+}
+#wrap h1 a {
+    display: block;
+    line-height: 50px;
+    color: #fff;
+}
+#wrap nav {
+    float: right;
+    width: 50%;
+}
+#wrap nav .depth01::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#wrap nav .depth01 > li {
+    float: left;
+    width: 25%;
+    position: relative;
+}
+#wrap nav .depth01 > li > a {
+    display: block;
+    line-height: 50px;
+    color: #fff;
+}
+#wrap nav .depth02 {
+    background-color: #000;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.6s;
+    z-index: 99;
+}
+#wrap nav .depth02 li a {
+    display: block;
+    line-height: 50px;
+    color: #fff;
+}
+#wrap nav .depth01:hover .depth02 {
+    height: 250px;
+}
+#wrap .fake {
+    background-color: #000;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.6s;
+    z-index: 1;
+}
+#wrap nav:hover + .fake {
+    height: 250px;
+}
+#wrap nav .depth01 > li:hover > a {
+    background-color: #fff;
+    color: #000;
+}
+#wrap nav .depth02 > li:hover > a {
+    background-color: #fff;
+    color: #000;
+}

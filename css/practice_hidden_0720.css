@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'EF_hyunygothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_hyunygothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: ;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+#wrap {
+    background-color: #000;
+    width: 200px;
+    text-align: center;
+}
+#wrap h1 a {
+    display: block;
+    color: #fff;
+    line-height: 80px;
+    font-family: 'EF_hyunygothic';
+}
+#wrap nav .depth01 > li {
+    position: relative;
+}
+#wrap nav .depth01 > li > a {
+    display: block;
+    color: #fff;
+    line-height: 50px;
+    border-top: solid 1px #fff;
+}
+#wrap nav .depth02 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+}
+#wrap nav .depth02 li a {
+    display: block;
+    color: #000;
+    background-color: #ccc;
+    line-height: 50px;
+    border-top: solid 1px #000;
+}
+#wrap nav .depth01 > li:hover .depth02 {
+    display: block;
+}
