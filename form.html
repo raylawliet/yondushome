@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./join.html">
+        <fieldset>
+            <legend>회원가입</legend>
+        <p>
+            <span> 이름 : </span>
+            <input type="text" name="name" placeholder="한글로 입력해주세요" required autofocus>
+        </p>
+        <p>
+            <span> 아이디 : </span>
+            <input type="text" name="ID" maxlength="10" placeholder="영문 및 숫자 조합만 가능" required>
+        </p>
+        <p>
+            <span> 비밀번호 : </span>
+            <input type="password" name="PW" maxlength="15" placeholder="영문 및 숫자 조합만 가능" required>
+        </p>
+        <p>
+            <span> 성별 : </span>
+            <input type="radio" name="gender" id="man" checked>
+            <label for="man">남자</label>
+            <input type="radio" name="gender" id="woman">
+            <label for="woman">여자</label>
+            <input type="radio" name="gender" id="nocomment">
+            <label for="nocomment">밝히고싶지않음</label>
+        </p>
+        <p>
+            <span> 관심사 : </span>
+            <input type="checkbox" name="fav01" id="fav_01" value="fav-01">
+            <label for="fav_01">사회</label>
+            <input type="checkbox" name="fav02" id="fav_02" value="fav-02">
+            <label for="fav_02">경제</label>
+            <input type="checkbox" name="fav03" id="fav_03" value="fav-03">
+            <label for="fav_03">IT</label>
+            <input type="checkbox" name="fav04" id="fav_04" value="fav-04">
+            <label for="fav_04">연예</label>
+        </p>
+        <p>
+            <span> 증명사진 : </span>
+            <input type="file" name="img_jpg">
+        </p>
+        <p>
+            <span> 증명사진 : </span>
+            <input type="date" name="date" min="2020-01-01" max="2022-12-31" step="1">
+        </p>
+        <p>
+            <span> 연령대 : </span>
+            <input type="number" name="number" placeholder="10" min="10" max="80" step="10">
+        </p>
+        <p>
+            <span> 선호컬러 : </span>
+            <input type="color" name="color">
+            <input type="color" name="color">
+            <input type="color" name="color">
+        </p>
+        <p>
+            <span> 지역선택 : </span>
+            <select>
+                <optgroup label="서울시">
+                    <option id="gangnam-gu">강남구</option>
+                    <option id="gangdong-gu">강동구</option>
+                    <option id="gangseo-gu">강서구</option>
+                </optgroup>
+                <optgroup label="경기도">
+                    <option id="anyang-si">안양시</option>
+                    <option id="sungnam-si">성남시</option>
+                    <option id="suwon-si">수원시</option>
+                </optgroup>
+            </select>
+        </p>
+        <p>
+            <span> 코멘트 : </span>
+            <textarea name="comment" rows="5" cols="20"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="회원가입하기">
+            <input type="reset" value="다시작성하기">
+        </p>
+        </fieldset>     
+    </form>
+</body>
+</html>
