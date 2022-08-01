@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 16px;
+    line-height: 50px;
+    height: 50px;
+}
+ul,ol,dl {
+    list-style: none;
+}
+#tab {
+    text-align: center;
+    width: 20%;
+    position: relative;
+}
+#tab:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#tab > li {
+    width: 50%;
+    float: left;
+}
+#tab > li > input {
+    display: none;
+}
+#tab > li > label {
+    display: block;
+    line-height: 3rem;
+    background-color: #000;
+    color: #fff;
+}
+#tab .tabbox {
+    height: 10rem;
+    line-height: 1rem;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background-color: #ccc;
+    color: #000;
+    font-size: 1rem;
+    z-index: 1;
+}
+#tab > li > input:checked +label {
+    background-color: #757575;
+    font-size: 1.4rem;
+}
+#tab > li > input:checked ~.tabbox {
+    z-index: 99;
+}
