@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            margin: 0 auto;
+            width: 500px;
+        }
+        table caption {
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 26px;
+        }
+        table, th, td {
+            border: solid 1px #000;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>제목입니다앙</caption>
+        <thead>
+            <th>하나</th>
+            <th>두울</th>
+            <th>세엣</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td align="center">오미자</td>
+                <td><b>결명자</b></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td align="center">한줄 없어져서 td는 2개</td>
+                <td rowspan="2">야야야</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>집에 가고싶다</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>4</td>
+                <td align="center" colspan="3" valign=top height="300">위로 붙이고 가운데 정렬<br>
+                띄어쓰기는 br<br>
+                <em>이탤릭체는 em</em><br>
+                <b>볼드체는 b</b></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
