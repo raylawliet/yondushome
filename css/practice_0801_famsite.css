@@ -8,42 +8,43 @@ ul {
 a {
     text-decoration: none;
 }
-#famsite {
-    margin : 0 auto;
-    padding: 200px;
+#box {
     text-align: center;
-    width: 150px;
-}
-#famsite > li {
+    width: 300px;
+    margin: 300px;
     position: relative;
 }
-#famsite > li > input {
+#box > input {
     display: none;
+    
 }
-#famsite > li > label {
+#box > label {
     display: block;
     background-color: #000;
     color: #fff;
     line-height: 50px;
+    cursor: pointer;
 }
-#famsite > .fm_menu {
+#box .abbox {
     position: absolute;
     left: 0;
-    top: 100%;
+    bottom: 100%;
     width: 100%;
     height: 0;
     overflow: hidden;
     transition: 0.5s;
 }
-#famsite > .fm_menu li {
-
-}
-#famsite > .fm_menu li a {
+#box .abbox > li {}
+#box .abbox > li > a {
     display: block;
     background-color: #ccc;
     color: #000;
     line-height: 50px;
 }
-#famsite > li > input:checked .fm_menu {
+#box > input:checked ~.abbox {
     height: 250px;
+}
+#box .abbox > li:hover a {
+    background-color: #000;
+    color: #fff;
 }

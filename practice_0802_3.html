@@ -19,24 +19,20 @@
         div {
             margin: 300px;
             text-align: center;
-        }
-        .depth01 {
             width: 30%;
-        }
-        .depth01 > li {
             position: relative;
         }
-        .depth01 > li > input {
+        div input {
             display: none;
         }
-        .depth01 > li > label {
+        div label {
             display: block;
             background-color: #000;
             color: #fff;
             line-height: 50px;
             cursor: pointer;
         }
-        .depth02 {
+        .fsmenu {
             position: absolute;
             left: 0;
             width: 100%;
@@ -45,16 +41,16 @@
             overflow: hidden;
             transition: 0.5s;
         }
-        .depth02 li a {
+        .fsmenu li a {
             display: block;
             background-color: #ccc;
             color: #000;
             line-height: 50px;
         }
-        .depth01 > li > input:checked ~.depth02 {
+        div input:checked ~.fsmenu {
             height: 250px;
         }
-        .depth02 > li:hover > a {
+        .fsmenu > li:hover > a {
             background-color: #000;
             color: #fff;
         }
@@ -62,19 +58,15 @@
 </head>
 <body>
     <div>
-        <ul class="depth01">
-            <li>
-                <input type="checkbox" id="famsite">
-                <label for="famsite">패밀리사이트</label>
-                <ul class="depth02">
-                    <li><a href="#">패밀리사이트</a></li>
-                    <li><a href="#">패밀리사이트</a></li>
-                    <li><a href="#">패밀리사이트</a></li>
-                    <li><a href="#">패밀리사이트</a></li>
-                    <li><a href="#">패밀리사이트</a></li>
-                </ul>
-            </li>
-        </ul>
+        <input type="checkbox" id="famsite">
+        <label for="famsite">패밀리사이트</label>
+            <ul class="fsmenu">
+                <li><a href="#">패밀리사이트</a></li>
+                <li><a href="#">패밀리사이트</a></li>
+                <li><a href="#">패밀리사이트</a></li>
+                <li><a href="#">패밀리사이트</a></li>
+                <li><a href="#">패밀리사이트</a></li>
+            </ul>
     </div>
 </body>
 </html>
