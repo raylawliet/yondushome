@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .any {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            background-color: #666;
+            border-radius: 50%;
+            top: 0;
+            left: calc(50% - 100px);
+            animation: move 1s 2s infinite ease-in-out alternate;
+        }
+        @keyframes move{
+            0% {
+                top: 0;
+                transform: scale(1);
+            }
+            100% {
+                top: 70%;
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="any">
+    </div>
+</body>
+</html>
