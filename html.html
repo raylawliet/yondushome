@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="./javascript/html.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #popup_btn {
+            background-color: #333;
+            color: #fff;
+            border: 0;
+            width: 120px;
+            line-height: 30px;
+        }
+        .opt_black {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.8);
+            display: none;
+        }
+        .pop {
+            position: absolute;
+            width: 600px; 
+            height: 400px;
+            top: calc(50% - 300px);
+            left: calc(50% - 200px);
+            background-color: #fff;
+        }
+        #close_btn {
+            position: absolute;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            width: 120px;
+            line-height: 30px;
+            right: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="popup_btn">자세히 보기</button>
+    <div class="opt_black">
+        <div class="pop">
+        <p>팝업내용</p>
+        <button id="close_btn">닫기</button>
+        </div>
+    </div>
+</body>
+</html>
