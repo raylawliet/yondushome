@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        body.on {
+            background-color: #333;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">배경색 변경</button>
+    하이루
+    <script>
+        $(function(){
+            $('#btn').on('click',function(){
+                $('body').toggleClass('on');
+            });            
+        });
+    </script>
+</body>
+</html>

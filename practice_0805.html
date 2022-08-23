@@ -6,30 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .any {
-            position: fixed;
-            width: 200px;
-            height: 200px;
-            background-color: #666;
-            border-radius: 50%;
-            top: 0;
-            left: calc(50% - 100px);
-            animation: move 1s 2s infinite ease-in-out alternate;
+    * {
+        margin: 0;
+        padding: 0;
         }
-        @keyframes move{
-            0% {
-                top: 0;
-                transform: scale(1);
-            }
-            100% {
-                top: 70%;
-                transform: scale(1.2);
-            }
+        a {
+            text-decoration: none;
+        }
+        section {
+            height: 100vh;
+        }
+        section:nth-child(1) {
+            background: linear-gradient(45deg,#333,#fff);
+        }
+        section:nth-child(2) {
+            background-color: green;
+        }
+        section:nth-child(3) {
+            background-color: blue;
+        }
+        section:nth-child(4) {
+            background-color: aqua;
+        }
+        #top_btn {
+            position: fixed;
+            right: 5%;
+            bottom: 5%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #333;
+            color: #fff;
+            border: 0;
+        }
+        #top_btn a {
+            display: block;
+            font-size: 20px;
+            color: #fff;
+        }
+        input {
+            line-height: 50px;
+            width: 300px;
+        }
+        input:focus {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="any">
-    </div>
-</body>
+    <section id="home"><input type="text"></section>
+    <section></section>
+    <section></section>
+    <button id="top_btn"><a href="#home">TOP</a></button>
 </html>
