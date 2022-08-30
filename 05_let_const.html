@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var int = 0; // 선언
+        console.log(int);
+
+        int = 2; // 재할당(다시 선언 안하고 이름만 불러냄)
+        console.log(int);
+
+        var int = 1; // 재선언이 가능함. 초기화 개념으로 생각하면 됨
+        console.log(int);
+
+        let num = 4;
+        console.log(num); // let도 재할당이 가능하다.
+
+        num = 8;
+        console.log(num); 
+        // let num = 9;
+        // console.log(num); // 오류메시지 뜸 -> let은 재선언이 불가능하다.
+        // 오류 떴을 땐 당황하지 말고 메시지 복사해서 번역기 돌리기!
+
+        const INT = 10;
+        console.log(INT);
+
+        // INT = 1; // const는 재할당도 불가능하다. (변수든 상수변수든)
+    </script>
+</body>
+</html>
