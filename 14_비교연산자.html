@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 1;
+        let b = 3;
+
+        // a가 b보다 크다.
+        document.write(a > b, '<br />'); // false
+        // a가 b보다 작다.
+        document.write(a < b, '<br />'); // true
+        // a가 b보다 크거나 같다.
+        document.write(a >= b, '<br />'); // false
+        // a가 b보다 작거나 같다.
+        document.write(a <= b, '<br />'); // true
+        // a와 b는 같다. (데이터의 타입을 따지지 않고 값만 비교)
+        document.write(a == b, '<br />'); // false
+        // a와 b는 같지않다. (데이터의 타입을 따지지 않고 값만 비교)
+        document.write(a != b, '<br />'); // true
+        // a와 b는 같다. (데이터의 타입까지 일치해야 같다고 함)
+        document.write(a === b, '<br />'); // false
+        // a와 b는 같지않다. (데이터의 타입까지 비교)
+        document.write(a !== b, '<br />'); // true
+
+        let num = false; // 논리형
+        let int = 0; // 숫자형
+
+        document.write(num == int , '<br />');
+        // 숫자 0과 false(거짓)는 혼동의 여지가 있음.
+        // 사실 0이 아닌 모든 수는 true(참)값임.
+        document.write(num === int, '<br />');
+        // 데이터 타입까지 비교해줘야 같지 않다고 인식함.
+    </script>
+</body>
+</html>

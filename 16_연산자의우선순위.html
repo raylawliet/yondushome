@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. () 괄호 안에 있는 연산을 제일 먼저 함.
+        // 2. 단항연산자 --, ++, !(not)
+        // 3. 산술연산자 +, -, *, /, %
+        // 4. 비교연산자 >, >=, <, <=, ==, !=, ===, !==
+        // 5. 논리연산자 &&(and), ||(or)
+        // 6. 대입연산자 =, +=, -=, *=, /=, %=
+
+        let a = 1;
+        let b = 3;
+
+        document.write((a <= b)&&(a == b)); // false
+        // 소괄호가 없어도, 비교연산자가 논리연산자보다 우선순위가 높으므로
+        // a와 b의 비교연산을 먼저 하게 됨. (a <= b), (a == b) 먼저, 나중에 && 논리
+    </script>
+</body>
+</html>

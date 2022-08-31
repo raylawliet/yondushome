@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = 10;
+        let num2 = 20;
+        let result;
+
+        --num1; // 9, 1감소 (전치연산자 , 전위연산자)
+        document.write(num1 + '<br />');
+
+        ++num1; // 10, 1증가 (전치연산자, 전위연산자)
+        document.write(num1 + '<br />');
+
+        result = num2++; // (후치연산자, 후위연산자)
+        document.write(result + '<br />'); // 20
+
+        result = ++num2; // num2가 21인 상태에서 전치연산자로 1 증가 받음.
+        document.write(result); // num2 == 22
+    </script>
+</body>
+</html>

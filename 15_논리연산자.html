@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 3;
+        let b = 1;
+
+        document.write((a >= b)||(a == b), '<br />');
+        // or연산자
+        // a가 b보다 크거나 같다 or a와 b가 같다.
+        // 둘 중 값이 하나라도 true(참)이면 true값을 반환한다.
+
+        document.write((a > b)&&(a == b), '<br />');
+        // and연산자
+        // a가 b보다 크다 and a와 b가 같다.
+        // or연산자보다 엄격함.
+        // 둘다 참이여야 true값을 반환
+
+        document.write(!(a == b), '<br />');
+        // not연산자
+        // 원래값이 true이면 false로, false이면 true로 반대값을 반환함
+        // 부정 연산
+    </script>
+</body>
+</html>
