@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3,4,5 봄 6,7,8 여름 9,10,11 가을 12,1,2 겨울
+        // 봄에 해당할 경우 "봄봄봄 봄이 와써용~" 화면에 노출
+        // 여름에 해당할 경우 "서퍼비치에 갈 여름이 왔어용~" 화면에 노출
+        // 가을에 해당할 경우 "단풍구경 갑세~" 화면에 노출
+        // 겨울에 해당할 경우 "스노보드 타러 갈 겨울이 왔어용~" 화면에 노출
+        // 잘못된 달 수가 들어오면 "다시 입력해주세요. 12개월을 벗어났습니다." 알림 출력
+        // 변수는 1개만 사용!
+        // if else if문 사용.
+
+        let month = prompt('달을 입력해주세요', 0);
+        if(month >= 3 && month <= 5){
+            document.write('봄봄봄 봄이 와써용~');
+        }
+        else if(month >= 6 && month <= 8){
+            document.write('서퍼비치에 갈 여름이 왔어용~');
+        }
+        else if(month >= 9 && month <= 11){
+            document.write('단풍구경 갑세~');
+        }
+        else if(month > 12 || month == 0){
+            document.write('다시 입력해주세요. 12개월을 벗어났습니다.');
+        }
+        else{
+            alert('스노보드 타러 갈 겨울이 왔어용~');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 유저에게 ID, PW를 입력받아 ID가 "green"이고 PW가 "1234"일 경우만
+        // "관리자님 환영합니다." 알림 출력
+        // ID만 잘못됐을 경우 "관리자 ID가 잘못되었습니다." 알림 출력
+        // PW만 잘못됐을 경우 "비밀번호를 확인해주세요." 알림 출력
+        // 둘다 잘못됐다면, "ID와 PW를 확인해주세요." 알림 출력
+
+        let userId = prompt('ID를 입력해주세요');
+        let userPw = prompt('PW를 입력해주세요');
+
+        if(userId === 'green' && userPw === '1234'){
+            alert('관리자님 환영합니다.');
+        }else if(userId != 'green' && userPw === '1234'){
+            alert('관리자 ID가 잘못되었습니다.');
+        }else if(userId === 'green' && userPw != '1234'){
+            alert('비밀번호를 확인해주세요.');
+        }else{
+            alert('ID와 PW를 확인해주세요.');
+        }
+    </script>
+</body>
+</html>

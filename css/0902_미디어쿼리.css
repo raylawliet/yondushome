@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ol,ul,dl {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.list {
+    width: 1200px;
+    margin: 0 auto;
+}
+.list li {
+    width: calc(25% - 30px);
+    background-color: #ff0000;
+    float: left;
+    height: 320px;
+    margin-right: 10px;
+    margin-bottom: 1%;
+}
+.list li:last-child {
+    margin-right: 0;
+}
+
+@media screen and (max-width : 1279px){
+    /*최대 너비 1279px 이하 (1279 포함)*/
+    /*1024~1280 모니터 직전까지*/
+    /*사실상 1024 모니터를 위한 것*/
+    /*1280 이상은 일반 pc버전이라고 봐도 무방*/
+    /*무조건 media쿼리가 우선순위를 가짐. float 지우고싶으면 float: none;*/
+    .list li {
+        width: calc(50% - 10px);
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width : 989px){}
+@media screen and (max-width : 767px){}
+@media screen and (max-width : 619px){}
+@media screen and (max-width : 579px){}
+@media screen and (max-width : 479px){}
+@media screen and (max-width : 419px){}
+@media screen and (max-width : 359px){}
+@media screen and (max-width : 320px){}
