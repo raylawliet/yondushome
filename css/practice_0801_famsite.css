@@ -15,8 +15,7 @@ a {
     position: relative;
 }
 #box > input {
-    display: none;
-    
+    display: none;    
 }
 #box > label {
     display: block;
@@ -34,7 +33,6 @@ a {
     overflow: hidden;
     transition: 0.5s;
 }
-#box .abbox > li {}
 #box .abbox > li > a {
     display: block;
     background-color: #ccc;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <input type="text" placeholder="영문 입력">
+    <button id="btn">검색</button>
+    <div class="wrap"></div>
+
+    <script>
+        $(function(){
+            $('input').on('click', function(){
+                $(this).attr('placeholder','');
+                // 태그의 속성값을 제어할 수 있는 메서드
+            });
+        });
+
+        $('#btn').on('click', function(){
+            let data_input = $('input').val();
+            // val : 값(밸류) -> 값이 있는 애들만 쓸 수 있음. div나 a태그 같은 애들은 못 씀
+            // input, select, textarea 같은 애들만 쓸 수 있음.
+            $('.wrap').html('<h2>' + data_input + '</h2>');
+        });
+    </script>
+</body>
+</html>

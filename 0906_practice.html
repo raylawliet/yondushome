@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            margin: 0 auto;
+            width: 60%;
+        }
+        dl dt {
+            border-bottom: solid 2px #000;
+            background-color: #dca7ff;
+            line-height: 100px;
+            text-indent: 40px;
+        }
+        dl dt:after {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: solid 8px #333;
+            border-bottom: solid 8px #333;
+            border-left: solid 8px transparent;
+            border-right: solid 8px transparent;
+            transition: 1s;
+            margin-left: 10px;
+        }
+        dl dt:hover:after {
+            transform: rotate(720deg);
+        }
+        dl dd {
+            background-color: #fff;
+            border-bottom: solid 2px #000;
+            line-height: 100px;
+            display: none;
+        }
+        dl dd span {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff0000;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <dl id="wrap">
+        <dt>공지사항인데</dt>
+        <dd>좀 <span>잘</span> 좀 읽어</dd>
+
+        <dt>자꾸 똑같은거 물어보지 말고</dt>
+        <dd>제발 <span>게시판을 보라고</span></dd>
+
+        <dt>고객센터에 전화를 하지말고</dt>
+        <dd><span>공지사항</span> 을 읽으라고</dd>
+
+        <dt>갑질하지마</dt>
+        <dd>나도 <span>가끔은</span> 갑이야... 식당같은데...</dd>
+    </dl>
+
+    <script>
+        $(function(){
+            $()
+
+            $('#wrap dt').on('click', function(){
+                $('+dd',this).slideDown(500).siblings("dd").slideUp(500);
+            });
+
+            $('#wrap dd').on('click', function(){
+                $(this).slideUp(500);
+            });
+
+            // $('#wrap dt').on('click', function(){
+                // $(this).slideToggle(100);
+           // });
+           // 하지만 굳이 slideToggle 보다는 toggleClass로 처리하는 게 훨씬 안정적임
+        });
+    </script>
+</body>
+</html>
