@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let luckyNumber = prompt('행운의 숫자를 고르세요 1 - 3', 1);
+
+        // if(luckyNumber == '3'){
+            //document.write('키보드를 획득하셨습니다.');
+        // }else if(luckyNumber == '2'){
+            //document.write('그래픽카드를 획득하셨습니다.');
+        // }else if(luckyNumber == '1'){
+            // document.write('PC를 획득하셨습니다.');
+        // }else{
+            // document.write('꽝!');
+        // }
+
+        switch(luckyNumber){
+            case '3' : document.write('키보드를 획득하셨습니다.');
+            break; // 문장을 탈출하는 키워드. 반드시 case 끝나고나면 break문이 뒤에 붙어야한다. 안그러면 연달아 터짐.
+
+            case '2' : document.write('그래픽카드를 획득하셨습니다.');
+            break;
+
+            case '1' : document.write('PC를 획득하셨습니다.');
+            break;
+
+            default : document.write('꽝!');
+            // if else문의 else의 경우처럼 default값 뒤엔 break문 붙일 필요 없다.
+        }
+    </script>
+</body>
+</html>
