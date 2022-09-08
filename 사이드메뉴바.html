@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ol,ul,dl {
+            list-style: none;
+        }
+        ul {
+            width: 60%;
+            height: 50px;
+            text-align: center;
+            border-bottom: solid 2px #ccc;
+            background-color: #fff;
+            line-height: 50px;
+        }
+        ul li {
+            background-color: #f4b276;
+            border-bottom: solid 2px #ef9952;
+            line-height: 50px;
+            display: none;
+        }
+        .block {
+            background-color: #f4b276;
+            border-bottom: solid 2px #ef9952;
+            line-height: 50px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+        <ul class="menu1">전체상품
+            <li>육류</li>
+            <li>해산물</li>
+            <li>찌개/탕</li>
+            <li>면류</li>
+            <li>분식/튀김</li>
+            <li>간식/음료</li>
+            <li>캠핑용품</li>
+        </ul>
+        
+
+        <ul class="menu2">신상/베스트
+            <li>신상품</li>
+            <li>베스트상품</li>
+        </ul>
+
+        <ul class="menu3">특가/세일
+            <li>특가상품</li>
+            <li>세일상품</li>
+        </ul>
+
+        <ul class="menu4">자체상품
+            <li>밀키트</li>
+            <li>캠핑용품</li>
+        </ul>
+
+        <ul class="menu5">커뮤니티
+            <li>공지사항</li>
+            <li>FAQ</li>
+            <li>이벤트</li>
+        </ul>
+
+    <script>
+        $(function(){
+            $('ul').on('click',function(){
+                $('li',this).toggleClass('block')
+            });
+        //$(function(){
+            //$('.menu1').on('click', function(){
+                //$('menu1 dd',this).slideDown(500).siblings("dd").slideUp(500);
+            //});
+
+            // $('#wrap dt').on('click', function(){
+                // $(this).slideToggle(100);
+           // });
+           // 하지만 굳이 slideToggle 보다는 toggleClass로 처리하는 게 훨씬 안정적임
+        //});
+    </script>
+</body>
+</html>
