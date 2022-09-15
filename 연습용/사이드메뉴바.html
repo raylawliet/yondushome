@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            margin: 0 auto;
+            width: 300px;
+            text-align: center;
+            font-size: 20px;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul,ol,dl {
+            list-style: none;
+        }
+        dl dt {
+            border-bottom: solid 2px #5c5c5c;
+            background-color: #fff;
+            line-height: 60px;
+            font-weight: bold;
+        }
+        dl dd {
+            display: none;
+            background-color: #fff;
+            line-height: 60px;
+        }
+        dl dd ul li a {
+            display: block;
+            font-size: 20px;
+            border-bottom: solid 2px #ccc;
+            background-color: #ff900e;
+            color: #000;
+        }
+        .block {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <dl id="wrap">
+        <dt>전체상품</dt>
+        <dd>
+            <ul>
+                <li><a href="#">육류</a></li>
+                <li><a href="#">해산물</a></li>
+                <li><a href="#">찌개/탕</a></li>
+                <li><a href="#">면류</a></li>
+                <li><a href="#">분식/튀김</a></li>
+                <li><a href="#">간식/음료</a></li>
+                <li><a href="#">캠핑용품</a></li>
+            </ul>
+        </dd>
+
+        <dt>신상/베스트</dt>
+        <dd>
+            <ul>
+                <li><a href="#">신상품</a></li>
+                <li><a href="#">베스트상품</a></li>
+            </ul>
+        </dd>
+
+        <dt>특가/세일</dt>
+        <dd>
+            <ul>
+                <li><a href="#">특가상품</a></li>
+                <li><a href="#">세일상품</a></li>
+            </ul>
+        </dd>
+
+        <dt>자체상품</dt>
+        <dd>
+            <ul>
+                <li><a href="#">밀키트</a></li>
+                <li><a href="#">캠핑용품</a></li>
+            </ul>
+        </dd>
+
+        <dt>커뮤니티</dt>
+        <dd>
+            <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">이벤트</a></li>
+            </ul>
+        </dd>
+    </dl>
+
+    <script>
+        $(function(){
+            $('#wrap dt').on('click', function(){
+                $('+dd',this).slideDown(500).siblings("dd").slideUp(500);
+            });
+
+            $('#wrap dd').on('click', function(){
+                $(this).slideUp(500);
+            });
+
+            // $('#wrap dt').on('click', function(){
+                // $(this).slideToggle(100);
+           // });
+           // 하지만 굳이 slideToggle 보다는 toggleClass로 처리하는 게 훨씬 안정적임
+        });
+    </script>
+</body>
+</html>
