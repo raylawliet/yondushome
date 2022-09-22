@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        #wrap {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+        #wrap ul {
+            width: 1200px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #wrap ul li {
+            display: none;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+        }
+        #wrap ul li:nth-child(1) {
+            background-color: #ff0000;
+        }
+        #wrap ul li:nth-child(2) {
+            background-color: #ffff00;
+        }
+        #wrap ul li:nth-child(3) {
+            background-color: #1900ff;
+        }
+        #wrap ul li a {
+            display: block;
+            line-height: 300px;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+        }
+        #stop {
+            position: absolute;
+            width: 100px;
+            line-height: 50px;
+            background-color: #414141;
+            color: #fff;
+            font-size: 20px;
+            border: 0;
+            bottom: -100px;
+            left: calc(50% - 50px);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="wrap">
+        <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+        <button id="stop">||</button>
+    </div>
+
+    <script>
+        $(function(){
+            let count = 0;
+            let bool = true;
+
+            $('#wrap ul li').eq(count).fadeIn(300);
+
+            function fade_inOut(){
+                count++;
+                    count %= 3;
+                    $('#wrap ul li').eq(count).fadeIn(300).siblings().fadeOut(300);
+            }
+
+            let autoFade = setInterval(fade_inOut,1000);
+            // 일정한 시간 간격으로 코드를 무한반복 실행하는 함수
+
+            $('#stop').on('click',function(){
+                if(bool === true){
+                clearInterval(autoFade);
+                $(this).html('▶');
+                bool = false;
+                } else {
+                    autoFade = setInterval(fade_inOut, 1000);
+                    $(this).html('||');
+                    bool = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

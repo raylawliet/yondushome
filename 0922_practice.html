@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        #container {
+            width: 100%;
+        }
+        #container #box {
+            width: 1200px;
+            height: 300px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        #container #box ul {
+            width: 1200px;
+            position: relative;
+        }
+        #container #box ul li {
+            position: absolute;
+            display: none;
+            width: 1200px;
+            top: 0;
+            left: 0;
+            height: 300px;
+        }
+        #container #box ul li:nth-child(1) {
+            background-color: #ffff00;
+        }
+        #container #box ul li:nth-child(2) {
+            background-color: #ff0000;
+        }
+        #container #box ul li:nth-child(3) {
+            background-color: #0004ff;
+        }
+
+        #container #box ul li a {
+            display: block;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 300px;
+            color: #fff;
+        }
+
+        #auto {
+            position: absolute;
+            bottom: -70px;
+            left: calc(50% - 50px);
+            display: inline-block;
+            background-color: #4b4b4b;
+            color: #fff;
+            border: 0;
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+            </ul>
+            <button id="auto">||</button>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            let count = 0;
+            let bool = true;
+
+            $('#container ul li').eq(count).fadeIn(300);
+
+            function fade_inOut(){
+                count++;
+                count %= 3;
+                $('#container ul li').eq(count).fadeIn(300).siblings(300).fadeOut(300)
+            }
+
+            let autoFade = setInterval(fade_inOut, 1000);
+
+            $('#auto').on('click', function(){
+                if(bool === true){
+                    clearInterval(autoFade);
+                    $(this).html('▶');
+                    bool = false;
+                }else{
+                    autoFade = setInterval(fade_inOut, 1000);
+                    $(this).html('||');
+                    bool = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

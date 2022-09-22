@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 기본형
+
+        // for(초기식;조건식;종결식){
+            // 실행문;
+        // }
+
+        // while문이 조건 비중이 더 큰 편
+        // for문은 조건보다는 횟수에 비중을 더 두는 편
+        // while문과 달리 초기식, 종결식이 존재함
+        
+        // 초기식 -> 조건 확인 -> 조건 부합시 실행문 -> 종결식 -> 조건 확인 -> 조건 부합시 실행문 ...
+
+        for(let i = 0; i < 10; i++){
+            document.write(i);
+        }
+        alert(i); // for문 안에서 선언한 것 -> 밖으로 나오면 존재X (let, const. 하지만 var는 존재함)
+        // 주의 : 초기식에 선언 형태 안쓰면 자동으로 var로 선언됨.
+    </script>
+</body>
+</html>

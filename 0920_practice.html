@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            }
+            a {
+                text-decoration: none;
+            }
+        #container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+        #container #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #container #wrap ul {
+            width: 100%;
+            position: relative;
+        }
+        #container #wrap ul li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            display: none;
+        }
+        #container #wrap ul li:nth-child(1) {
+            background-color: #ff0000;
+        }
+        #container #wrap ul li:nth-child(2) {
+            background-color: #ffff00;
+        }
+        #container #wrap ul li:nth-child(3) {
+            background-color: #1100ff;
+        }
+        #container #wrap ul li a {
+            display: block;
+            line-height: 300px;
+            text-align: center;
+            color: #fff;
+            font-size: 30px;
+
+        }
+
+        button {
+            position: absolute;
+            display: inline-block;
+            border: 0;
+            background-color: #4b4b4b;
+            color: #fff;
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+        #play_btn {
+            bottom: -100px;
+            left: calc(50% - 140px);
+        }
+        #stop_btn {
+            bottom: -100px;
+            left: calc(50% - -40px);}
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="wrap">
+            <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+            </ul>
+        </div>
+        <button id="play_btn">PLAY</button>
+        <button id="stop_btn">STOP</button>
+    </div>
+
+    <script>
+        $(function(){
+            let count = 0;
+            let bool = true;
+
+            $('#container #wrap ul li').eq(count).fadeIn(300);
+
+            function fade_inOut(){
+                count++;
+                count %= 3;
+                $('#container #wrap ul li').eq(count).fadeIn(300).siblings().fadeOut(300);
+            }
+
+            let autoFade = setInterval(fade_inOut,1000);
+
+            $('#stop_btn').on('click', function(){
+                if(bool === true){
+                    clearInterval(autoFade)
+                    bool = false;
+                }
+            });
+
+            $('#play_btn').on('click', function(){
+                if(bool === false){
+                    autoFade = setInterval(fade_inOut,1000);
+                    bool = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
