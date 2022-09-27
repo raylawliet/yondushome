@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        #banner {
+            width: 1280px;
+            margin: 0 auto;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <img src="../img/cat_1.jpg" alt="">
+    </div>
+
+    <script>
+        $(function(){
+
+            $(window).resize(function(){
+
+                if($(window).width() > 768){
+                    $('#banner img').attr('src','../img/cat_1.jpg')
+                }else{
+                    $('#banner img').attr('src','../img/flower_1.jpg')
+                }        
+            });
+        });
+    </script>
+</body>
+</html>

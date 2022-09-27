@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            width: 1280px;
+            display: flex;
+            margin: 0 auto;
+            list-style: none;
+        }
+        ul li {
+            width: 25%;
+        }
+        ul li a {
+            display: block;
+        }
+        ul li a img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>전체이미지 <span></span>개 입니다.</h1>
+    <ul>
+        <li><a href="#"><img src="../img/쇼핑몰1.webp" alt="" data-img="../img/쇼핑몰5.webp" data-origin="../img/쇼핑몰1.webp"></a></li>
+        <li><a href="#"><img src="../img/쇼핑몰2.gif" alt="" data-img="../img/쇼핑몰6.webp" data-origin="../img/쇼핑몰2.gif"></a></li>
+        <li><a href="#"><img src="../img/쇼핑몰3.gif" alt="" data-img="../img/쇼핑몰7.webp" data-origin="../img/쇼핑몰3.gif"></a></li>
+        <li><a href="#"><img src="../img/쇼핑몰4.webp" alt="" data-img="../img/쇼핑몰8.webp" data-origin="../img/쇼핑몰4.webp"></a></li>
+    </ul>
+
+    <!--data~ : html 낮은 속성에선 안됨-->
+
+    <script>
+        $(function(){
+            $('li:not(:first-child) a img').on('mouseenter',function(){ // li:not(:first-child) => 제외하고~
+                $(this).attr('src', $(this).data('img')); // data 메서드에서만 허용. src 뒤에(메서드 안에) 값 뿐만 아니라 지금처럼 문장이 나올 수도 있다.
+            }).on('mouseleave',function(){ // 셀렉터가 같으면 메서드 체인으로 주어 생략하고 이어서 쓸 수 있다.
+                $(this).attr('src', $(this).data('origin'));
+            });
+
+            $('h1 > span').html($('ul li').length); // length => 길이, 갯수
+        });
+
+        // data 메서드는 제이쿼리에서밖에 못씀
+    </script>
+</body>
+</html>
