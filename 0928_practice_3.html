@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #main {
+            width: 500px;
+            margin-bottom: 4px;
+        }
+        #main img {
+            display: block;
+            width: 100%;
+        }
+        ul {
+            list-style: none;
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+        }
+        ul li {
+            width: calc(25% - 4px);
+        }
+        ul li div img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>전체이미지 <span></span>개입니다.</h1>
+    <div id="main"><img src="../img/flower_01.jpg" alt="큰썸네일이미지"></div>
+    <ul>
+        <li>
+            <div class="sub_img"><img src="../img/flower_01.jpg" alt="작은썸네일이미지1"></div>
+        </li>
+        <li>
+            <div class="sub_img"><img src="../img/flower_02.jpg" alt="작은썸네일이미지2"></div>
+        </li>
+        <li>
+            <div class="sub_img"><img src="../img/flower_03.jpg" alt="작은썸네일이미지3"></div>
+        </li>
+        <li>
+            <div class="sub_img"><img src="../img/flower_04.jpg" alt="작은썸네일이미지4"></div>
+        </li>
+    </ul>
+
+    <script>
+        $(function(){
+            $('h1 span').html($('ul li').length);
+
+            $('ul li').on('click', function(){
+                $('#main img').attr('src', $('div img', this).attr('src'));
+            });
+        });
+    </script>
+</body>
+</html>

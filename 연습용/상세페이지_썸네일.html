@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            margin: 0 auto;
+            width: 400px;
+            display: flex;
+        }
+        ul li {
+            width: 25%;
+        }
+        ul li a {
+            display: block;
+        }
+        ul li a img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>전체이미지 <span></span>개입니다.</h1>
+    <img id="gr" src="/img/쇼핑몰5.webp" alt="">
+    <ul>
+        <li><a href="#"><img src="/img/쇼핑몰1.webp" alt=""></a></li>
+        <li><a href="#"><img src="/img/쇼핑몰2.gif" alt=""></a></li>
+        <li><a href="#"><img src="/img/쇼핑몰3.gif" alt=""></a></li>
+        <li><a href="#"><img src="/img/쇼핑몰4.webp" alt=""></a></li>
+    </ul>
+
+    <script>
+        $(function(){
+            $('h1 > span').html($('ul li').length);
+            // 셀렉터에 지우고 넣겠다 li의 개수만큼
+
+            $('ul li').each(function(){
+                $('a img',this).css('display','none');
+                $('a',this).append($(this).index()+1); 
+                // equal(eq) : '너 XX의 몇번째야' => 밖에서 (순번을) 찾을 때 쓰임 / index : '너 몇번째야' => 항상 'this'랑 같이 쓰임
+                // eq는 밖에서 순서를 찾음 / index : 안에서 이미 가지고 있는 순번을 반환 (완전 반대!)
+            });
+            // each문 : for문과 비슷 (각각 풀어헤쳐라)
+
+            $('ul li').on('mouseenter', function(){
+                $('#gr').attr('src', $('a img', this).attr('src'));
+            });
+            // mouseenter가 아니라 click 이벤트라면? => a태그를 다른 태그로 바꿔서 써야함 (a태그의 이벤트와 충돌할 수 있기 때문)
+        });
+    </script>
+</body>
+</html>

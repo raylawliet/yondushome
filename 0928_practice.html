@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            margin: 0 auto;
+            width: 1280px;
+            display: flex;
+        }
+        ul li {
+            width: 25%;
+        }
+        ul li a {
+            display: block;
+        }
+        ul li a img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>전체이미지 <span></span>개입니다.</h2>
+    <ul>
+        <li><a href="#"><img src="/img/쇼핑몰1.webp" alt="" data-origin="/img/쇼핑몰1.webp" data-change="/img/쇼핑몰5.webp"></a></li>
+        <li><a href="#"><img src="/img/쇼핑몰2.gif" alt="" data-origin="/img/쇼핑몰2.gif" data-change="/img/쇼핑몰6.webp"></a></li>
+        <li><a href="#"><img src="/img/쇼핑몰3.gif" alt="" data-origin="/img/쇼핑몰3.gif" data-change="/img/쇼핑몰7.webp"></a></li>
+        <li><a href="#"><img src="/img/쇼핑몰4.webp" alt="" data-origin="/img/쇼핑몰4.webp" data-change="/img/쇼핑몰8.webp"></a></li>
+    </ul>
+
+    <script>
+        $(function(){
+            $('ul li a img').on('mouseenter', function(){
+                $(this).attr('src', $(this).data('change'));
+            }).on('mouseleave', function(){
+                $(this).attr('src', $(this).data('origin'));
+            });
+
+            $('h2 span').html($('ul li').length);
+        });
+    </script>
+</body>
+</html>
