@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=4.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="prop_check">
+        <li>
+            <input type="checkbox" id="ALL_check" class="check_ALL">
+            <label for="ALL_check">전체선택</label>
+        </li>
+        <li>
+            <input type="checkbox" id="check_01" class="box_name">
+            <label for="check_01">체크박스 1</label>
+        </li>
+        <li>
+            <input type="checkbox" id="check_02" class="box_name">
+            <label for="check_02">체크박스 2</label>
+        </li>
+        <li>
+            <input type="checkbox" id="check_03" class="box_name">
+            <label for="check_03">체크박스 3</label>
+        </li>
+        <li>
+            <input type="checkbox" id="check_04" class="box_name">
+            <label for="ALL_check">체크박스 4</label>
+        </li>
+    </ul>
+
+    <script>
+        $(function(){
+            let ckl = $('.box_name:checked').length;
+
+            $('#ALL_check').on('click', function(){
+                if($('#ALL_check').prop('checked')){
+                    $('.box_name').prop('checked', true);
+                }else{
+                    $('.box_name').prop('checked', false);
+                }
+            });
+
+            $('.box_name').on('click', function(){
+                ckl = $('.box_name:checked').length;
+
+                if(ckl === 4){
+                    $('#ALL_check').prop('checked', true);
+                }else{
+                    $('#ALL_check').prop('checked', false);
+                }
+            });
+        });
+
+
+        // 만약에
+        // 체크박스가 하나라도 checked 되어있지 않다면
+        // ALL_check의 checked를 false로 만들어라
+
+        // prop과 attr 절대 헷갈리면 안됨
+        // prop : 태그의 '상태'를 제어함 (hover, click, checked 등)
+        // attr 태그의 '속성'을 제어함
+    </script>
+</body>
+</html>
