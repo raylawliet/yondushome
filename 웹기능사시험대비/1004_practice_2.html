@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ol,ul,dl {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        #container {
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            overflow: hidden;
+        }
+        #container #main_b {
+            width: 999999px;
+            height: 300px;
+            overflow: hidden;
+        }
+        #container #main_b li {
+            width: 1200px;
+            height: 300px;
+            float: left;
+        }
+
+        .bn_1 {
+            background-color: red;
+        }
+        .bn_2 {
+            background-color: green;
+        }
+        .bn_3 {
+            background-color: blue;
+        }
+        #container #main_b li a {
+            display: block;
+            text-align: center;
+            line-height: 300px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #container button {
+            border: 0;
+            width: 100px;
+            height: 40px;
+            background-color: #666;
+            color: #fff;
+        }
+        #play {
+            bottom: -60px;
+            left: calc(50% - 120px);
+        }
+        #stop {
+            bottom: -60px;
+            left: calc(50% - -20px);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="main_b">
+            <li class="bn_1"><a href="#">1</a></li>
+            <li class="bn_2"><a href="#">2</a></li>
+            <li class="bn_3"><a href="#">3</a></li>
+        </ul>
+        <button id="play">PLAY</button>
+        <button id="stop">STOP</button>
+    </div>
+
+    <script>
+        $(function(){
+            let _w = $('#main_b li').width();
+            let dir = '-=';
+            let bool = true;
+            let autoSlide = setInterval(slide, 3000);
+
+            $('#stop').on('click', function(){
+                if(bool === true){
+                    clearInterval(autoSlide);
+                    bool = false;
+                }
+            });
+            $('#play').on('click', function(){
+                if(bool === false){
+                    autoSlide = setInterval(slide, 3000);
+                    bool = true;
+                }
+            });
+
+
+            function slide(){
+                $('#main_b').animate({'marginLeft':dir+_w},1000,function(){
+                    $('li:first-child', this).appendTo($(this));
+                    $(this).css('margin-left', '0');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

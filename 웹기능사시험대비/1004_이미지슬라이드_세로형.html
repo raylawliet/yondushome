@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ol, ul, dl {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        #container {
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #main_b {
+            width: 1200px;
+            height: 300px;
+            overflow: hidden;
+        }
+        #main_b ul {
+            width: 999999px;
+            overflow: hidden;
+        }
+        #main_b ul li {
+            width: 1200px;
+            height: 300px;
+            /* float: left; */
+        }
+        #main_b ul li a {
+            display: block;
+            line-height: 300px;
+            text-align: center;
+            font-size: 50px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .bg_01 {
+            background-color: red;
+        }
+        .bg_02 {
+            background-color: blue;
+        }
+        .bg_03 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="main_b">
+            <ul>
+                <li class="bg_01"><a href="#">1</a></li>
+                <li class="bg_02"><a href="#">2</a></li>
+                <li class="bg_03"><a href="#">3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            let _h = $('#main_b li').height();
+            let dir = "-="; // 왼쪽으로
+            let autoSlide = setInterval(slide, 3000);
+
+            function slide(){
+                $('#main_b ul').animate({'marginTop':dir+_h}, 1000, function(){
+                    $('li:first-child', this).appendTo($(this));
+                    $(this).css('margin-top', '0');
+                }); // animate(뭘할건지, duration, 끝난뒤 뭘 할건지)
+            }
+        });
+    </script>
+</body>
+</html>

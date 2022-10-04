@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ol,ul,dl {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        #container {
+            margin: 0 auto;
+            text-align: center;
+            width: 1200px;
+        }
+        #container #main_b {
+            width: 1200px;
+            height: 300px;
+            position: relative;
+        }
+        #container #main_b li {
+            width: 1200px;
+            height: 300px;
+            position: absolute;
+            display: none;
+        }
+
+        .bn_1 {
+            background-color: red;
+        }
+        .bn_2 {
+            background-color: green;
+        }
+        .bn_3 {
+            background-color: blue;
+        }
+        #container #main_b li a {
+            display: block;
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="main_b">
+            <li class="bn_1"><a href="#">1</a></li>
+            <li class="bn_2"><a href="#">2</a></li>
+            <li class="bn_3"><a href="#">3</a></li>
+        </ul>
+    </div>
+
+    <script>
+        $(function(){
+            let num = 0;
+            let autoFade = setInterval(fadeInOut, 1000);
+
+            $('#main_b li').eq(num).fadeIn(300);
+
+            function fadeInOut(){
+                num++;
+                num %= 3;
+                $('#main_b li').eq(num).fadeIn(300).siblings().fadeOut(300);
+            }
+        })
+    </script>
+</body>
+</html>
