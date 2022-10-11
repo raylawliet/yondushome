@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2단 배열(어레이)</title>
+</head>
+<body>
+    <ul id="gnb">
+
+    </ul>
+    <script>
+        // 1번) 2단배열로 네이버, 다음, 구글 그리고 각각의 url을 선언하세요.
+        // 2번) 배열의 데이터를 네비게이션으로 뿌려주세요.
+        // 3번) if else문을 사용하여 다음에게만 클래스 on이 들어가도록 처리해주세요
+
+        const nav = [['네이버', 'http://www.naver.com'],
+                    ['다음', 'http://www.daum.net'],
+                    ['구글', 'http://www.google.com']];
+        let navTag = '';
+        let className = '';
+
+        for(i = 0; i < nav.length; i++){
+            if(i == 1){
+                className = 'on';
+            }else{
+                className = '';
+            }
+            navTag += `<li class="${className}"><a href="${nav[i][1]}">${nav[i][0]}</a></li>`;
+        }
+        document.getElementById('gnb').innerHTML = navTag;
+    </script>
+</body>
+</html>
