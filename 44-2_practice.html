@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li.on a {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <ul id="gnb"></ul>
+    <div id="img_box"></div>
+
+    <script>
+        // 1번 2단배열로 네이버, 다음, 구글 그리고 각각의 url을 선언하세요.
+        // 2번 배열의 데이터를 네비게이션으로 뿌려주세요.
+        // 3번 if else문을 사용하여 다음에게만 클래스 on이 들어가도록 처리해주세요.
+
+        const nav = [['상품1', 'http://www.naver.com', 'on', '../img/flower_01.jpg'],
+                    ['상품2', 'http://www.daum.net', '', '../img/flower_02.jpg'],
+                    ['상품3', 'http://www.google.com', '', '../img/flower_03.jpg'],
+                    ['상품4', 'http://www.nate.com', '', '../img/flower_04.jpg']];
+        let navTag = '';
+        let count = 0;
+
+        for(i=0; i < nav.length; i++){           
+            navTag += `<li class=${nav[i][2]}><a href="${nav[i][1]}">${nav[i][0]}</a></li>`;
+        }
+
+        document.getElementById('gnb').innerHTML = navTag; 
+        document.getElementById('img_box').innerHTML = `<img src="${nav[0][3]}" alt="" />`; 
+
+        ///////////////////////////////// 출력 ////////////////////////////////////////
+
+        let autoClass = setInterval(autoCount, 1000);
+        // 셋인터벌함수 호출
+
+        function autoCount(){
+            count++;
+            count %= nav.length; // 0 1 2
+
+            // document.getElementById('img_box').innerHTML = `<img src="${nav[count][3]}" alt="" />`; 
+            document.querySelector('#img_box img').setAttribute('src', nav[count][3]); // setAttribute = .attr (속성값 제어)
+
+            for(let j = 0; j < nav.length; j++){ // 0 1 2
+                if(j === count){ // j와 count가 같다면
+                    document.querySelectorAll('#gnb li').item(j).classList.add('on');
+                    // 여기서 li가 0 1 2 for문으로 인하여
+                    // li 태그들 중 j 또는 count와 순번이 같은 놈 클래스 on 추가해라
+                }else{
+                    document.querySelectorAll('#gnb li').item(j).classList.remove('on');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
