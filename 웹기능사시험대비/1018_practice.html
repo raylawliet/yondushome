@@ -19,19 +19,18 @@
         }
         #wrap {
             width: 1200px;
+            height: 300px;
             margin: 0 auto;
             text-align: center;
             overflow: hidden;
         }
         #wrap .main_b {
-            width: 99999px;
-            height: 300px;
-            overflow: hidden;
+            width: 1200px;
+            height: 99999px;
         }
         #wrap .main_b li {
             width: 1200px;
             line-height: 300px;
-            float: left;
         }
         #wrap .main_b .bn1 {
             background-color: red;
@@ -61,14 +60,14 @@
 
     <script>
         $(function(){
-        let _w = $('#wrap .main_b li').width();
+        let _h = $('#wrap .main_b li').height();
         let mn = "-=";
         let autoSlide = setInterval(Slide, 3000);
 
         function Slide(){
-            $('#wrap .main_b').animate({'marginLeft' : mn + _w}, 1000, function(){
+            $('#wrap .main_b').animate({'marginTop' : mn + _h}, 1000, function(){
                 $('li:first-child', this).appendTo($(this));
-                $(this).css('margin-left', '0');
+                $(this).css('margin-top', '0');
             });
         }});
     </script>
